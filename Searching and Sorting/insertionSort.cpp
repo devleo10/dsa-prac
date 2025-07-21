@@ -2,15 +2,16 @@
 using namespace std;
 void insertionSort(int arr[], int n)
 {
-  for (int i = 0; i < n; i++) {
-        int j=i;
-        while ( j > 0 && arr[j - 1] > arr[j]) {
-        int temp=arr[j-1];
-        arr[j-1]=arr[j];
-        arr[j]=temp;
-        j--;
+    for(int i = 0; i <= n; i++) {
+       {
+        int j = i;
+        while(j>0 && arr[j-1] > arr[j]){
+            swap(arr[j],arr[j-1]);
+            j--;
         }
-  }
+       }
+
+}
 }
 
 int main() {
@@ -19,18 +20,16 @@ int main() {
     cin >> n;
 
     int arr[n];
-    cout << "Enter array elements:\n";
-    for (int i = 0; i < n; i++) {
-        cout << "Enter element " << i << ": ";
+  
+    cout <<"Enter the elements of the array:"<<endl;
+    for(int i = 0; i < n; i++) {
         cin >> arr[i];
     }
 
     insertionSort(arr, n);
-
-    cout << "Sorted array:\n";
-    for (int i = 0; i < n; i++) {
+    cout << "Sorted array: ";
+    for(int i = 0; i < n; i++) {
         cout << arr[i] << " ";
     }
-
     return 0;
 }
